@@ -19,7 +19,7 @@ module SimpleProvision
 
     def check_executable_permissions
       @opts.fetch(:scripts).each do |file|
-        raise "The script #{file} is not executable." unless File.executable?(file)
+        raise "The script #{file} is not executable." unless File.executable?("servers/#{file}")
       end
     end
 
